@@ -1,0 +1,8 @@
+<h1>商品一覧</h1>
+
+<% @p3s.each do |p3| %>
+  <p>タイトル:<%= p3.title %></p><br>
+  <p>本文:<%= p3.content %></p><br>
+<% end %>
+
+<%= link_to "商品を掲載する", new_p3_path %>
