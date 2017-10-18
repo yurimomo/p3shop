@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-
-
+  devise_for :users
   get 'p3s' => 'p3s#index'
+
+  root 'top#index'
 
   resources :p3s, only: [:index, :new, :create, :edit, :update, :destroy]
 
