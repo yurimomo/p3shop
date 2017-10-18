@@ -1,4 +1,6 @@
 class P3sController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @p3s = P3.all
   end
