@@ -8,9 +8,10 @@
 
 <% @p3s.each do |p3| %>
  <div class="row">
- 
     <form>
-	
+
+	<%= image_tag (p3.picture_url) %><br>
+
 	<!-- <div class="comment"> -->
 	 <div class="text">
 	 <%= p3.content %><br>
@@ -30,7 +31,7 @@
     <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
 	
 	<%= link_to "削除" , root_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
-	</div>
+ </div>
 <% end %>
 </form>
 </div>

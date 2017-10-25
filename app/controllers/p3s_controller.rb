@@ -10,10 +10,10 @@ class P3sController < ApplicationController
   end
 
   def create
-  	@pic = P3.create(p3s_params)
-    @pic.user_id = current_user.id
+  	@p3 = P3.create(p3s_params)
+    @p3.user_id = current_user.id
     # user_idを代入する
-    if @pic.save
+    if @p3.save
      redirect_to p3s_path, notice: "投稿しました"
    else
     render 'new'
@@ -21,10 +21,14 @@ class P3sController < ApplicationController
   end
 
   def edit
+     @p3 = P3.find(params[:id])
   end
 
   def update
-  	
+  	@p3 = P3.find(params[:id])
+    @p3.update(p3s_params)
+    # @pic.update(pictures_params)
+    redirect_to p3s_path, notice: "編集しました"
   end
 
   def destroy
@@ -33,7 +37,8 @@ class P3sController < ApplicationController
 
   private
    def p3s_params
-    params.require(:p3).permit(:title, :content)
+    params.require(:p3).permit(:picture, :content)
   end
 
 end
+
