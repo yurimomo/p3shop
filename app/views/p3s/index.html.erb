@@ -1,8 +1,37 @@
-<h1>商品一覧</h1>
+<div class="container">
+ <div class="wrapper col-md-8 col-md-offset-2">
+<p><%= notice %></p>
+
+<%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
+
+<h2>商品一覧</h2>
 
 <% @p3s.each do |p3| %>
-  <p>タイトル:<%= p3.title %></p><br>
-  <p>本文:<%= p3.content %></p><br>
+ <div class="row">
+ 
+    <form>
+	
+	<!-- <div class="comment"> -->
+	 <div class="text">
+	 <%= p3.content %><br>
+	 </div>
+	 
+	 <div class="profile">
+	 <div class="profile_img">
+	  <%= profile_img(p3.user) %>
+	  </div>
+	  <div class="user_name">
+	  <%= p3.user.name %> が投稿しました
+	   <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+	 </div>
+	 </div>
+	
+    <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
+	
+	<%= link_to "削除" , root_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
+	</div>
 <% end %>
-
-<%= link_to "商品を掲載する", new_p3_path %>
+</form>
+</div>
+</div>

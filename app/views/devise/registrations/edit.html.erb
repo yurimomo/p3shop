@@ -4,8 +4,8 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label : %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
     <!-- 名前入力用のフィールドを追加 -->
@@ -31,6 +31,12 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= profile_img(@user) if profile_img(@user) %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
   </div>
 
   <div class="field">

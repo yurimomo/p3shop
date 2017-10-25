@@ -10,8 +10,14 @@ class P3sController < ApplicationController
   end
 
   def create
-  	P3.create(p3s_params)
-    redirect_to p3s_path
+  	@pic = P3.create(p3s_params)
+    @pic.user_id = current_user.id
+    # user_idを代入する
+    if @pic.save
+     redirect_to p3s_path, notice: "投稿しました"
+   else
+    render 'new'
+   end
   end
 
   def edit
