@@ -1,3 +1,115 @@
 // Place all the styles related to the Top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.image {
+ text-align: center;
+ margin: 0 0 0 100px;
+ /*width: 500px;
+ height: auto;*/
+ /*margin-left: 300px;*/
+}
+.image img{
+	/*height: 600px;*/
+	/*margin-left: 100px;*/
+}
+.login {
+	border: 5px solid pink;
+	width: 400px;
+	height: 500px;
+	margin: 0 auto;
+	margin-left: 50px;
+	margin-right: 50px;
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	float:right;
+}
+.login h3 {
+	font-family: 'Pacifico', cursive;
+	font-size: 36px;
+	width: auto;
+	height: auto;
+	margin: 0 auto;
+	margin-top: 50px;
+
+}
+.login a {
+	text-decoration: none;
+}
+.login p {
+	margin-top: 15px;
+	color: blue;
+}
+.fa-sign-in {
+	color: pink;
+}
+h4 {
+	color: pink;
+}
+footer {
+	height: 50px;
+	width: 100%;
+	/*margin: auto;*/
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background-color: skyblue;
+}
+footer a {
+	color: white;
+
+}
+
+footer  {
+	list-style: none;
+	margin: 0;
+}
+.contact {
+	padding-top: 10px;
+}
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	text-align: center;
+}
+.container:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.image {
+	float:left;
+	width: 700px;
+	margin-top: 100px;
+}
+.login {
+	float:right;
+	width: 500px;
+}
+header  {
+	height: 70px;
+	border-bottom: 3px solid gold;
+	color: gold;
+}
+.p3 {
+	font-size: 18px;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 20px;
+	width: 100px;
+	height: 30px;
+}
+/*.fa-thumbs-o-up {
+	font-size: 300px;
+	color: blue;
+}*/
+.flash {
+  color: black;
+  padding-top: 10px;
+}
+.fa-weixin {
+	font-size: 200px;
+}

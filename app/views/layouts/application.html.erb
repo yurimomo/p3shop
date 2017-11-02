@@ -1,17 +1,7 @@
-<% if user_signed_in? %>
-<div class="log_in">
-  <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-<% else %>
-  <li><%= link_to 'ログイン', new_user_session_path  %></li>
-  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-<% end %>
-</div>
-
 <!DOCTYPE html>
 <html>
 <head>
-  <title>P3</title>
+  <title>Face</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,8 +9,38 @@
 
 </head>
 <body>
+  <header>
+  <div class="p3">p3</div>
+ <% if user_signed_in? %>
+ <div class="log_in">
+ <ul>
+ <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+  <li>ユーザー一覧</li>
+  <li>メッセージ</li>
+</ul>
 
-<%= yield %>
+<% else %>
+<div class="log_out">
+ <ul>
+  <li><%= link_to 'ログイン', new_user_session_path  %></li>
+  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+  </ul>
+  </div>
 
-</body>
+<% end %>
+
+</header>
+<!-- <p class="flash"><%= notice %><%= alert %></p> -->
+
+
+   
+   <%= yield %>
+
+
+
+ <footer>
+   <div class="contact">お問い合わせ</div>
+ </footer>
+ </body>
 </html>

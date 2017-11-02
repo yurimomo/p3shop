@@ -14,10 +14,53 @@
  *= require_self
  */
 
-.log_in {
+/*.log_in {
 	list-style: none;
 	float: left;
 }
 li a {
 	display: block;
+}*/
+.log_in {
+	float: right;
+	padding-right: 10px;
+	margin-top: 5px;
 }
+.log_in ul li {
+	float:left;
+	width: auto;
+}
+
+.log_in ul li a {
+	margin-left: 10px;
+	padding: 5px;
+	text-decoration: none;
+	color: #gold;
+}
+.log_in ul li a:hover {
+	color: skyblue;
+}
+.log_out {
+	float: right;
+	padding-right: 10px;
+	margin-top: 5px;
+}
+.log_out ul {
+		list-style: none;
+
+}
+.log_out ul li {
+	float:left;
+	width: auto;
+}
+
+.log_out ul li a {
+	margin-left: 10px;
+	padding: 5px;
+	text-decoration: none;
+	color: gold;
+}
+.log_out ul li a:hover {
+	color: skyblue;
+}
+

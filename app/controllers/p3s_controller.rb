@@ -32,7 +32,9 @@ class P3sController < ApplicationController
   end
 
   def destroy
-  	
+    @p3 = P3.find(params[:id])
+    @p3.destroy
+    redirect_to p3s_path, notice: "削除しました"	
   end
 
   private
