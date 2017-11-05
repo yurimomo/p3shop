@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to p3_path(@p3), notice: 'コメントを投稿しました。' }
+        format.js { render :index }
+
       else
         format.html { render :new }
       end
