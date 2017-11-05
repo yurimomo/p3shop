@@ -39,7 +39,7 @@ class P3sController < ApplicationController
   # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
   def show
    # binding.pry
-    @comment = @p3.comments.build(set_p3)
+    @comment = @p3.comments.build
     @comments = @p3.comments
 
   end
@@ -59,5 +59,5 @@ class P3sController < ApplicationController
     @p3 = P3.find(params[:id])
   end
 
-end
 
+end
