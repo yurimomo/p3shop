@@ -67,3 +67,29 @@ li a {
 	color: skyblue;
 }
 
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	text-align: center;
+}
+footer {
+	height: 50px;
+	width: 100%;
+	
+	/*margin: auto;*/
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background-color: skyblue;
+}
+footer a {
+	color: white;
+
+}
+
+footer  {
+	list-style: none;
+	margin: 0;
+}

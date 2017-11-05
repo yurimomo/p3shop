@@ -1,5 +1,7 @@
 class P3sController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_p3, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @p3s = P3.all
@@ -26,11 +28,9 @@ class P3sController < ApplicationController
   end
 
   def edit
-     @p3 = P3.find(params[:id])
   end
 
   def update
-  	@p3 = P3.find(params[:id])
     @p3.update(p3s_params)
     # @pic.update(pictures_params)
     redirect_to p3s_path, notice: "編集しました"
@@ -46,7 +46,6 @@ class P3sController < ApplicationController
 
 
   def destroy
-    @p3 = P3.find(params[:id])
     @p3.destroy
     redirect_to p3s_path, notice: "削除しました"	
   end
