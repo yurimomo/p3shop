@@ -12,8 +12,12 @@
 	 <%= image_tag (p3.picture_url) %><br>
 
 	<!-- <div class="comment"> -->
+  <div class="title">
+   <p>商品名: <%= p3.title %><br></p>
+  
+   </div>
   <div class="text">
-	 <%= p3.content %><br>
+	 <p>お勧め理由や食べ方:<%= p3.content %></p><br>
   </div>
 	 
 	<div class="profile">
@@ -24,7 +28,7 @@
 	   <%= p3.user.name %> が投稿しました<br>
 	   <div class="comment">
 	   <%= link_to p3_path(p3) do %>
-	   <%= "コメントする" %>
+	   <%= "この商品についてコメントする" %>
          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
          <% end %>
 	 </div>
