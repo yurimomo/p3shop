@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar , AvatarUploader #deviseの設定配下に追記
 
-  has_many :p3s
+  has_many :p3s, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def self.create_unique_string
     SecureRandom.uuid

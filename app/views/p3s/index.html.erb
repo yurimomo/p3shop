@@ -21,10 +21,15 @@
 	   <%= profile_img(p3.user) %>
 	 </div>
 	 <div class="user_name">
-	   <%= p3.user.name %> が投稿しました
-	    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        <i class="fa fa-trash" aria-hidden="true"></i>
+	   <%= p3.user.name %> が投稿しました<br>
+	   <div class="comment">
+	   <%= link_to p3_path(p3) do %>
+	   <%= "コメントする" %>
+         <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+         <% end %>
 	 </div>
+	
+	</div>
 	</div>
 	
     <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>

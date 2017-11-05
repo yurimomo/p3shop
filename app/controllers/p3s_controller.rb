@@ -3,6 +3,11 @@ class P3sController < ApplicationController
 
   def index
     @p3s = P3.all
+    respond_to do |format|
+    format.html
+    format.js
+   end
+
   end
 
   def new
@@ -31,6 +36,15 @@ class P3sController < ApplicationController
     redirect_to p3s_path, notice: "編集しました"
   end
 
+  # showアククションを定義します。入力フォームと一覧を表示するためインスタンスを2つ生成します。
+  def show
+   # binding.pry
+    @comment = @p3.comments.build(set_p3)
+    @comments = @p3.comments
+
+  end
+
+
   def destroy
     @p3 = P3.find(params[:id])
     @p3.destroy
@@ -40,6 +54,10 @@ class P3sController < ApplicationController
   private
    def p3s_params
     params.require(:p3).permit(:picture, :content)
+  end
+
+  def set_p3
+    @p3 = P3.find(params[:id])
   end
 
 end

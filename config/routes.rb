@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -8,7 +9,11 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
-  resources :p3s, only: [:index, :new, :create, :edit, :update, :destroy]
+  # resources :p3s, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :p3s do
+   resources :comments
+    post :confirm, on: :collection
+end
 
   
 

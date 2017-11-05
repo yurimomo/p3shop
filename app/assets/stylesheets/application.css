@@ -26,6 +26,10 @@ li a {
 	padding-right: 10px;
 	margin-top: 5px;
 }
+.log_in ul{
+  list-style: none;
+}
+
 .log_in ul li {
 	float:left;
 	width: auto;
@@ -35,7 +39,7 @@ li a {
 	margin-left: 10px;
 	padding: 5px;
 	text-decoration: none;
-	color: #gold;
+	color: gold;
 }
 .log_in ul li a:hover {
 	color: skyblue;
@@ -47,7 +51,6 @@ li a {
 }
 .log_out ul {
 		list-style: none;
-
 }
 .log_out ul li {
 	float:left;
