@@ -52,7 +52,7 @@ class P3sController < ApplicationController
 
   private
    def p3s_params
-    params.require(:p3).permit(:picture, :content, :title)
+    params.require(:p3).permit(:picture, :content, :title, :price)
   end
 
   def set_p3
