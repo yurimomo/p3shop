@@ -1,50 +1,53 @@
 <div class="container">
  <div class="wrapper col-md-8 col-md-offset-2">
-    
+<%= search_form_for @search do |f| %>
+  <%= f.label :title_cont, "商品名" %>
+  <%= f.search_field :title_cont %>
+  <%= f.submit '検索する' %>
+<% end %>
+<% if params[:q].present? && params[:q][:title_cont].present? %>
+  
+   Search name: <%= params[:q][:title_cont] %>
 
+ <% end %>
+
+ 
  <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
 
   <h2>商品一覧</h2>
-
-  <% @p3s.each do |p3| %>
-   <div class="row">
-
+    <% @p3s.each do |p3| %>
+    <div class="row">
 	 <%= image_tag (p3.picture_url) %><br>
-
 	<!-- <div class="comment"> -->
-  <div class="title">
-   <p>[商品名]:  <%= p3.title %><br></p>
-  
+   <div class="title">
+     <p>[商品名]:  <%= p3.title %><br></p>
    </div>
    <div class="price">
    	<p>[購入時の値段]: <%= p3.price %></p>
    </div>
-
   <div class="text">
 	 <p>[お勧め理由や食べ方]:<%= p3.content %></p><br>
   </div>
-	 
-	<div class="profile">
-	 <div class="profile_img">
-	   <%= profile_img(p3.user) %>
-	 </div>
-	 <div class="user_name">
-	   <%= p3.user.name %> が投稿しました<br>
-	   <div class="comment">
+  <div class="profile">
+   <div class="profile_img">
+	 <%= profile_img(p3.user) %>
+   </div>
+   <div class="user_name">
+	 <%= p3.user.name %> が投稿しました<br>
+	  <div class="comment">
 	   <%= link_to p3_path(p3) do %>
 	   <%= "この商品についてコメントする" %>
-         <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-         <% end %>
-	 </div>
-	
-	
-	</div>
-	</div>
+       <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+     <% end %>
+   </div>	
+  </div>
+ </div>
 	
     <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
-	
 	<%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
    </div>
+ 
   <% end %>
+  <%= paginate @p3s%>
  </div>
 </div>

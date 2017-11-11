@@ -4,12 +4,26 @@ class P3sController < ApplicationController
 
 
   def index
-    @p3s = P3.all
+    @p3s = P3.page(params[:page])
+    @p3s = P3.all.order(created_at: :desc)
+    # @search = P3.ransack(params[:q])
+    @search = P3.ransack(params[:q])
+
+    # 検索結果
+    @products = @search.result
+
     respond_to do |format|
     format.html
     format.js
-   end
 
+    # 検索オブジェクト
+    # @search = P3.ransack(params[:q])
+    # # 検索結果
+    # @products = @search.result
+
+   end
+    # @q = P3.search(params[:q])
+    # @product = @q.result(distinct: true)
   end
 
   def new
