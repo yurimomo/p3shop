@@ -4,17 +4,22 @@ class P3sController < ApplicationController
 
 
   def index
-    @p3s = P3.page(params[:page])
-    @p3s = P3.all.order(created_at: :desc)
+    @q = P3.ransack(params[:q])
+    @products = @q.result(distinct: true)
     # @search = P3.ransack(params[:q])
-    @search = P3.ransack(params[:q])
+    # # @products = @q.result(distinct: :true)
+    # @p3s = P3.page(params[:page])
+    @products = P3.all.order(created_at: :desc)
+    @products = P3.page(params[:page]).per(5)
+    # @search = P3.ransack(params[:q])
+    # @search = P3.ransack(params[:q])
 
     # 検索結果
-    @products = @search.result
+    # @products = @search.result
 
-    respond_to do |format|
-    format.html
-    format.js
+    # respond_to do |format|
+    # format.html
+    # format.js
 
     # 検索オブジェクト
     # @search = P3.ransack(params[:q])
@@ -22,9 +27,7 @@ class P3sController < ApplicationController
     # @products = @search.result
 
    end
-    # @q = P3.search(params[:q])
-    # @product = @q.result(distinct: true)
-  end
+
 
   def new
   	@p3 = P3.new
@@ -64,7 +67,7 @@ class P3sController < ApplicationController
     redirect_to p3s_path, notice: "削除しました"	
   end
 
-  private
+private
    def p3s_params
     params.require(:p3).permit(:picture, :content, :title, :price)
   end
@@ -72,6 +75,6 @@ class P3sController < ApplicationController
   def set_p3
     @p3 = P3.find(params[:id])
   end
-
-
 end
+
+
