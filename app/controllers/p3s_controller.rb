@@ -6,35 +6,16 @@ class P3sController < ApplicationController
   def index
     @q = P3.ransack(params[:q])
     @products = @q.result(distinct: true)
-    # @search = P3.ransack(params[:q])
-    # # @products = @q.result(distinct: :true)
-    # @p3s = P3.page(params[:page])
-    @products = P3.all.order(created_at: :desc)
-    @products = P3.page(params[:page]).per(5)
-    # @search = P3.ransack(params[:q])
-    # @search = P3.ransack(params[:q])
-
-    # 検索結果
-    # @products = @search.result
-
-    # respond_to do |format|
-    # format.html
-    # format.js
-
-    # 検索オブジェクト
-    # @search = P3.ransack(params[:q])
-    # # 検索結果
-    # @products = @search.result
-
+    # @products = P3.all.order(created_at: :desc)
+    # @products = P3.page(params[:page]).per(5)
    end
 
-
   def new
-  	@p3 = P3.new
+    @p3 = P3.new
   end
 
   def create
-  	@p3 = P3.create(p3s_params)
+    @p3 = P3.create(p3s_params)
     @p3.user_id = current_user.id
     # user_idを代入する
     if @p3.save
@@ -64,17 +45,16 @@ class P3sController < ApplicationController
 
   def destroy
     @p3.destroy
-    redirect_to p3s_path, notice: "削除しました"	
+    redirect_to p3s_path, notice: "削除しました"  
   end
 
 private
    def p3s_params
     params.require(:p3).permit(:picture, :content, :title, :price)
-  end
+   end
 
   def set_p3
     @p3 = P3.find(params[:id])
   end
 end
-
 
