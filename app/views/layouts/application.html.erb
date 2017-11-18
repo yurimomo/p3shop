@@ -9,36 +9,13 @@
 
 </head>
 <body>
-  <header>
-  <div class="p3"><%= link_to "p3" , p3s_path %></div>
- <% if user_signed_in? %>
- <div class="log_in">
- <ul>
- <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-</ul>
-
-<% else %>
-<div class="log_out">
- <ul>
-  <li><%= link_to 'ログイン', new_user_session_path  %></li>
-  <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-  </ul>
-  </div>
-
-<% end %>
-
-</header>
-<!-- <p class="flash"><%= notice %><%= alert %></p> -->
-
-
    
    <%= yield %>
 
 
 
- <footer>
+<!--  <footer>
    <div class="contact">お問い合わせ</div>
- </footer>
+ </footer> -->
  </body>
 </html>

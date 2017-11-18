@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <title>p3shop</title>
+  <title>shareYammy</title>
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="top.scss">
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -9,26 +9,33 @@
 
 <!-- <div class="box"> -->
 
-
 <section class="container-fluid">
-  <div class="row">
-   <!-- <div class="box"> -->
-      <div class="image col-md-6 col-sm-6">
-      <div class="ice"><%= image_tag 'ice_cream.jpg' %></div>
+<header>
+ 
+   <img src="<%= asset_path "ice_cream.jpg" %>">
+       <div class="inside">
+          <%= link_to p3s_path do %>
+            <h1>tell everybody what you recommended</h1>
+         <% end %>
+       </div>
+
+ <div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
+    <% if user_signed_in? %>
+   <div class="log_in">
+     <ul>
+       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
       </div>
 
-     <div class="login col-md-6 col-sm-6">
-       <h3>tell everybody what you recommended</h3>
-       
-       
-       <%= link_to p3s_path do %>
-      <h4>一覧へ</h4>
-       <i class="fa fa-weixin fa-5x"></i>
-      <% end %>
-     </div>
-     </div>
-    
-   <!-- </div> -->
+     <% else %>
+   <div class="log_out">
+      <ul>
+       <li><%= link_to 'ログイン', new_user_session_path  %></li>
+       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+     </ul>
+    </div>
 
-
- </section>
+   <% end %>
+</header>
+ 

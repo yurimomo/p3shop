@@ -1,14 +1,4 @@
-.image {
- text-align: center;
- margin: 0 0 0 100px;
- /*width: 500px;
- height: auto;*/
- /*margin-left: 300px;*/
-}
-.image img{
-	/*height: 600px;*/
-	/*margin-left: 100px;*/
-}
+
 .login {
 	border: 5px solid pink;
 	width: 400px;
@@ -40,27 +30,11 @@
 .fa-sign-in {
 	color: pink;
 }
+
 h4 {
 	color: pink;
 }
-footer {
-	height: 50px;
-	width: 100%;
-	/*margin: auto;*/
-	position: absolute;
-	bottom: 0;
-	text-align: center;
-	background-color: skyblue;
-}
-footer a {
-	color: white;
 
-}
-
-footer  {
-	list-style: none;
-	margin: 0;
-}
 .contact {
 	padding-top: 10px;
 }
@@ -76,19 +50,21 @@ body {
 	clear: both;
 	display: block;
 }
-.image {
-	float:left;
-	width: 700px;
-	margin-top: 100px;
+header img {
+	width: 100%;
+	height: 100vh;
 }
 .login {
 	float:right;
 	width: 500px;
 }
 header  {
-	height: 70px;
-	border-bottom: 3px solid gold;
-	color: gold;
+	/*height: 70px;*/
+	background-size: cover;
+	margin-top: 0;
+    position: relative;
+	/*border-bottom: 3px solid gold;
+	color: gold;*/
 }
 .p3 {
 	font-size: 18px;
@@ -97,11 +73,90 @@ header  {
 	padding-top: 20px;
 	width: 100px;
 	height: 30px;
+	position: absolute;
+    top: 2%;
+    left: 5%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.log_in {
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
+.log_in li a{
+	color: white;
+}
+.log_out a{
+	color: white;
+}
+
+.log_out {
+    position: absolute;
+    top: 5%;
+    right: -10%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
 }
 /*.fa-thumbs-o-up {
 	font-size: 300px;
 	color: blue;
 }*/
+.log_in {
+	float: right;
+	padding-right: 10px;
+	margin-top: 5px;
+}
+.log_in ul{
+  list-style: none;
+}
+
+.log_in ul li {
+	float:left;
+	width: auto;
+}
+
+.log_in ul li a {
+	margin-left: 10px;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+}
+.log_in ul li a:hover {
+	color: skyblue;
+}
+.log_out {
+	float: right;
+	padding-right: 10px;
+	margin-top: 5px;
+}
+.log_out ul {
+		list-style: none;
+}
+.log_out ul li {
+	float:left;
+	width: auto;
+}
+
+.log_out ul li a {
+	margin-left: 10px;
+	padding: 5px;
+	text-decoration: none;
+	color: white;
+}
+.log_out ul li a:hover {
+	color: skyblue;
+}
+.container-fluid {
+	padding: 0;
+}
 .flash {
   color: black;
   padding-top: 10px;
@@ -109,4 +164,19 @@ header  {
 .fa-weixin {
 	font-size: 200px;
 }
-
+.inside {
+  width: 1000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.inside h1 {
+	color: white;
+	font-size: 35px;
+}
+.inside h1:hover {
+	color: gray;
+}
