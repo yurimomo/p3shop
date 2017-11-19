@@ -1,9 +1,15 @@
-<div class="container">
-  <div class="wrapper col-md-8 col-md-offset-2">
+<div class="header">
 
+ </div>
+
+<div class="container">
+  
+  <div class="wrapper col-md-8 col-md-offset-2">
+     
+     <div class="new_action">
       <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
 
-
+     </div>
       <%= search_form_for @q do |f| %>
       <%= f.label :title_cont, "商品名" %>
       <%= f.search_field :title_cont %>
