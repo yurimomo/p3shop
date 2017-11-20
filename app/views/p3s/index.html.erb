@@ -1,5 +1,5 @@
 <div class="header">
-
+ <h4>調味料の使い方や黄金比率をshareしましょう</h4>
  </div>
 
 <div class="container">
@@ -10,6 +10,7 @@
       <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
 
      </div>
+     <!-- 検索窓 -->
       <%= search_form_for @q do |f| %>
       <%= f.label :title_cont, "商品名" %>
       <%= f.search_field :title_cont %>
@@ -17,8 +18,9 @@
       <% end %>
 
       <%= link_to '一覧へ戻る', p3s_path %>
-
-   <h2>商品</h2>
+   
+     <!-- 一覧表示 -->
+   <!-- <h2>商品</h2> -->
 
      <% @products.each do |p3| %>
 
@@ -34,7 +36,7 @@
         <p>[お勧め理由や食べ方]:<%= p3.content %></p><br>
       </div>
 
-
+    <!-- user -->
      <div class="profile">
        <div class="profile_img">
         <%= profile_img(p3.user) %>
@@ -52,10 +54,10 @@
           
         <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
         <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
-     
+  
     </div>
-        <%= paginate @page %>
-        <!-- 名前をpageに変えて見た -->
+       
   <% end %>
+   <%= paginate @products %>
  </div>
 </div>
