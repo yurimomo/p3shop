@@ -22,6 +22,12 @@
      <%= image_tag(@p3.picture) %>
        <%= f.file_field :picture %>
     </div>
+    <div class="row">
+    <%= f.text_field :title, class: 'btn btn-default' %>
+  </div>
+  <div class="row">
+    <%= f.text_field :price, class: 'btn btn-default' %>
+  </div>
   <div class="row">
     <%= f.text_field :content, class: 'btn btn-default' %>
   </div>

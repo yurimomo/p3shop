@@ -26,15 +26,17 @@
 
       <div class="row">
         <%= image_tag (p3.picture_url) %><br>
-      <div class="title">
-        <p>[商品名]:  <%= p3.title %><br></p>
-      </div>
-      <div class="price">
-       <p>[購入時の値段]: <%= p3.price %></p>
-      </div>
-      <div class="text">
-        <p>[お勧め理由や食べ方]:<%= p3.content %></p><br>
-      </div>
+        <!-- <div class="exp"> -->
+            <div class="title">
+              <p>[商品名]:  <%= p3.title %><br></p>
+            </div>
+            <div class="price">
+             <p>[購入時の値段]: <%= p3.price %></p>
+            </div>
+            <div class="text">
+              <p>[お勧め理由や食べ方]:<%= p3.content %></p><br>
+            </div>
+        <!-- </div> -->
 
     <!-- user -->
      <div class="profile">
@@ -58,6 +60,7 @@
     </div>
        
   <% end %>
-   <%= paginate @products %>
+    
  </div>
+
 </div>

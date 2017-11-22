@@ -6,8 +6,9 @@ class P3sController < ApplicationController
   def index
     @q = P3.ransack(params[:q])
     @products = @q.result(distinct: true)
-    @products = P3.all.order(created_at: :desc)
-    @products = P3.page(params[:page]).per(5)
+    # @products = P3.all.order(created_at: :desc)
+    # @products = P3.page(params[:page]).per(5)
+
    end
 
   def new
