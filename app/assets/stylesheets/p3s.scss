@@ -17,9 +17,12 @@
     padding: 0.2em 0.5em;
 
 }
+.header h2 {
+ font-family: 'Amatic SC', cursive;
+
+}
 .header h4 {
 	text-align: center;
-	padding-top: 30px;
 	color: gray;
 }
 .profile_img img {
@@ -57,13 +60,13 @@
 	margin-top: 15px;
 }
 .profile {
-	width: 550px;
-	height: 70px;
-	margin-left: 100px;
+	/*width: 550px;*/
+	/*height: 70px;*/
+	/*margin-left: 100px;*/
 	border: 1px solid skyblue;
 	border-radius: 5px;
-	margin-top: 50px;
-	margin-bottom: 10px;
+	/*margin-top: 50px;*/
+	/*margin-bottom: 10px;*/
 }
 
  .text {
@@ -184,5 +187,5 @@ input {
 	margin-bottom: 30px;
 }
 .btn-default {
-	margin-bottom: 10px;
+	margin-top: 10px;
 }

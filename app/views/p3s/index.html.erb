@@ -1,32 +1,34 @@
-<div class="header">
- <h4>調味料の使い方や黄金比率をshareしましょう</h4>
- </div>
 
-<div class="container">
- <div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
-    <% if user_signed_in? %>
+    <div class="header">
+    
+     <h2>shareYummy</h2><br>
+     <h4>調味料の使い方や黄金比率をshareしましょう</h4>
+   </div>
+ 
+    <%#<div class="p3"><%= link_to "shareYummy" p3s_path %>
+    <%# if user_signed_in? %>
    <div class="log_in">
      <ul>
        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
       </ul>
-      </div>
+   </div>
 
-     <% else %>
-   <div class="log_out">
-      <ul>
-       <li><%= link_to 'ログイン', new_user_session_path  %></li>
-       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-     </ul>
-    </div>
+     <%# else %>
+   <!-- <div class="log_out">
+      <ul> -->
+       <!-- <li><%#= link_to 'ログイン', new_user_session_path  %></li> -->
+       <%#= link_to 'サインアップ', new_user_registration_path %></li>
+     <!-- </ul> -->
+    <!-- </div>  -->
 
-   <% end %>
-    <div class="wrapper col-md-8 col-md-offset-2">
-     
-     <div class="new_action">
-      <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
+   <%# end %>
+  
+<div class="wrapper col-md-8 col-md-offset-2 col-xs-12">
+       <div class="new_action">
+        <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
 
-     </div>
+       </div>
      <!-- 検索窓 -->
       <%= search_form_for @q do |f| %>
       <%= f.label :title_cont, "商品名" %>
@@ -41,7 +43,7 @@
 
      <% @products.each do |p3| %>
 
-      <div class="row">
+      <!-- <div class="row"> -->
         <%= image_tag (p3.picture_url) %><br>
         <!-- <div class="exp"> -->
             <div class="title">
@@ -56,28 +58,33 @@
         <!-- </div> -->
 
     <!-- user -->
+    <!-- <div class="row"> -->
+    <div class="wrapper col-md-8 col-xs-12 col-sm-12">
      <div class="profile">
-       <div class="profile_img">
-        <%= profile_img(p3.user) %>
-       </div>
-       <div class="user_name">
+        <div class="profile_img">
+         <%= profile_img(p3.user) %>
+        </div>
+        <div class="user_name">
          <%= p3.user.name %> が投稿しました<br>
-       <div class="comment">
-        <%= link_to p3_path(p3) do %>
-        <%= "この商品についてコメントする" %>
-         <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-        <% end %>
+        <div class="comment">
+         <%= link_to p3_path(p3) do %>
+         <%= "この商品についてコメントする" %>
+          <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+         <% end %>
+        </div>
        </div> 
       </div>
-     </div>
-          
+    
+      <!-- ここまでで一つのboxとして作成 -->
+     
+    
         <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
         <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
-  
-    </div>
+        </div>
+ </div>
+    
+
        
   <% end %>
     
- </div>
 
-</div>
