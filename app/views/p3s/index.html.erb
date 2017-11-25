@@ -3,7 +3,24 @@
  </div>
 
 <div class="container">
+ <div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
+    <% if user_signed_in? %>
+   <div class="log_in">
+     <ul>
+       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      </ul>
+      </div>
 
+     <% else %>
+   <div class="log_out">
+      <ul>
+       <li><%= link_to 'ログイン', new_user_session_path  %></li>
+       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+     </ul>
+    </div>
+
+   <% end %>
     <div class="wrapper col-md-8 col-md-offset-2">
      
      <div class="new_action">

@@ -8,18 +8,7 @@
 </head>
 
 <!-- <div class="box"> -->
-
-<section class="container-fluid">
-<header>
- 
-   <img src="<%= asset_path "ice_cream.jpg" %>">
-       <div class="inside">
-          <%= link_to p3s_path do %>
-            <h1>tell everybody what you recommended</h1>
-         <% end %>
-       </div>
-
- <div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
+<div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
     <% if user_signed_in? %>
    <div class="log_in">
      <ul>
@@ -37,5 +26,16 @@
     </div>
 
    <% end %>
+<section class="container-fluid">
+<header>
+ 
+   <img src="<%= asset_path "ice_cream.jpg" %>">
+       <div class="inside">
+          <%= link_to p3s_path do %>
+            <h1>tell everybody what you recommended</h1>
+         <% end %>
+       </div>
+
+
 </header>
  
