@@ -18,13 +18,14 @@
    <!-- <div class="log_out">
       <ul> -->
        <!-- <li><%#= link_to 'ログイン', new_user_session_path  %></li> -->
-       <%#= link_to 'サインアップ', new_user_registration_path %></li>
+       <!-- <%#= link_to 'サインアップ', new_user_registration_path %></li> -->
      <!-- </ul> -->
     <!-- </div>  -->
 
    <%# end %>
   
-<div class="wrapper col-md-8 col-md-offset-2 col-xs-12">
+
+  <div class="wrapper col-md-8 col-md-offset-2 col-xs-12">
        <div class="new_action">
         <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
 
@@ -42,8 +43,9 @@
    <!-- <h2>商品</h2> -->
 
      <% @products.each do |p3| %>
+    <div class="container">
 
-      <!-- <div class="row"> -->
+ <!--  <div class="row"> -->
         <%= image_tag (p3.picture_url) %><br>
         <!-- <div class="exp"> -->
             <div class="title">
@@ -55,36 +57,31 @@
             <div class="text">
               <p>[お勧め理由や食べ方]:<%= p3.content %></p><br>
             </div>
-        <!-- </div> -->
+        <div class="wrapper col-md-8 col-xs-12 col-sm-12">
 
-    <!-- user -->
-    <!-- <div class="row"> -->
-    <div class="wrapper col-md-8 col-xs-12 col-sm-12">
-     <div class="profile">
-        <div class="profile_img">
-         <%= profile_img(p3.user) %>
-        </div>
-        <div class="user_name">
+        <div class="profile">
+         <div class="profile_img">
+          <%= profile_img(p3.user) %>
+         </div>
+         <div class="user_name">
          <%= p3.user.name %> が投稿しました<br>
-        <div class="comment">
+         <div class="comment">
          <%= link_to p3_path(p3) do %>
          <%= "この商品についてコメントする" %>
           <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+          </div>
          <% end %>
         </div>
        </div> 
       </div>
-    
+    <!-- </div> -->
       <!-- ここまでで一つのboxとして作成 -->
-     
+     </div>
+
     
         <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
         <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
-        </div>
- </div>
-    
-
-       
+       </div>
   <% end %>
     
 
