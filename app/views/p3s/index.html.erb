@@ -24,7 +24,7 @@
 
    <%# end %>
   
-
+ 
   <div class="wrapper col-md-8 col-md-offset-2 col-xs-12">
        <div class="new_action">
         <%= link_to "商品を掲載する", new_p3_path, class: 'btn btn-default post' %>
@@ -47,6 +47,8 @@
 
  <!--  <div class="row"> -->
         <%= image_tag (p3.picture_url) %><br>
+        <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
+        <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
         <!-- <div class="exp"> -->
             <div class="title">
               <p>[商品名]:  <%= p3.title %><br></p>
@@ -69,7 +71,7 @@
          <%= link_to p3_path(p3) do %>
          <%= "この商品についてコメントする" %>
           <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-          </div>
+
          <% end %>
         </div>
        </div> 
@@ -77,10 +79,10 @@
     <!-- </div> -->
       <!-- ここまでで一つのboxとして作成 -->
      </div>
-
+  
     
-        <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
-        <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
+        <%#= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
+        <%#= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
        </div>
   <% end %>
     
