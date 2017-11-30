@@ -35,10 +35,13 @@
 }
 
 .post {
-	margin-top: 15px;
+	margin-top: 30px;
 }
 .new_action {
 	margin-bottom: 10px;
+}
+.container {
+	margin-top: 50px;
 }
 /*.comment {
 	width: 300px;
@@ -193,4 +196,18 @@ input {
 }
 .btn-default {
 	margin-top: 10px;
+}
+.top_move {
+	background-color: skyblue;
+	width: 60px;
+	height: 25px;
+	margin: 0 auto;
+	margin-top: 10px;
+	text-align: center;
+	cursor: pointer;
+
+	/*border-radius: 50%;*/
+}
+.top_move:hover {
+	background-color: gray;
 }

@@ -1,4 +1,13 @@
 
+   <script type="text/javascript">
+    $(function() {
+  $(".top_move").on('click touchstart', function () {
+    $('html,body').animate({ scrollTop: 0 }, 'swing');
+      return false;
+    });
+});
+   </script>
+
     <div class="header">
     
      <h2>shareYummy</h2><br>
@@ -84,6 +93,9 @@
         <%#= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
         <%#= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
        </div>
+
   <% end %>
     
+       <div class="top_move">TOP</div>
+
 
