@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
    
 
-   config.action_mailer.default_url_options = { host: 'https://polar-beyond-85821.herokuapp.com/' }
+   config.action_mailer.default_url_options = { host: 'agile-refuge-54600.herokuapp.com/' }
    ActionMailer::Base.delivery_method = :smtp
    ActionMailer::Base.smtp_settings =
     {
