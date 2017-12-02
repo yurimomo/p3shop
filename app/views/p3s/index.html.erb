@@ -55,9 +55,12 @@
     <div class="container">
 
  <!--  <div class="row"> -->
+
         <%= image_tag (p3.picture_url) %><br>
+      <% if current_user == p3.user %>
         <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>
         <%= link_to "削除" , p3_path(p3.id), method: :delete, data: { confirm: '本当に削除していいですか？'},class: 'btn btn-default' %>
+        <% end %>
         <!-- <div class="exp"> -->
             <div class="title">
               <p>[商品名]:  <%= p3.title %><br></p>

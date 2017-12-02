@@ -20,6 +20,7 @@
          <%= form_for(@p3) do |f| %>
           <div class="row">
              <%= f.file_field :picture %>
+             <%= image_tag (@p3.picture_url) %>
           </div>
 
 
