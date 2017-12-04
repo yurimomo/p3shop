@@ -19,11 +19,11 @@
        <div class="col-md-8 col-md-offset-2">
          <%= form_for(@p3) do |f| %>
           <div class="row">
-             <%#= f.file_field :picture %>
+             <%= f.file_field :picture %>
              <%= image_tag (@p3.picture_url) %>
-             <form>
-             <input type="file">
-             </form>
+             
+             <!-- <input type="file"> -->
+             
              <div class="preview">
           </div>
           </div>
