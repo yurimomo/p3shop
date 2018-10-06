@@ -17,6 +17,9 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
+  host = 'samplehost'
+  Rails.application.routes.default_url_options[:host] = host
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

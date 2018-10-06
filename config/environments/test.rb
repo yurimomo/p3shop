@@ -33,6 +33,8 @@ Rails.application.configure do
 
   # Randomize the order test cases are executed.
   config.active_support.test_order = :random
+  config.action_mailer.default_url_options = { :host => "test.yourhost.com" }
+
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
