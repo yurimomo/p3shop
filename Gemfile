@@ -43,6 +43,8 @@ gem 'rails_12factor', group: :production
 
 gem 'jquery-rails'
 
+gem 'nokogiri',  '1.8.1'
+gem 'pkg-config', "~> 1.1"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
