@@ -8,12 +8,16 @@ Rails.application.routes.draw do
 
 
   root 'top#index'
-
+if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+end
   # resources :p3s, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :p3s do
    resources :comments
     post :confirm, on: :collection
 end
+
+
 
   
 
