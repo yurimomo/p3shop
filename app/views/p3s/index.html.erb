@@ -52,10 +52,11 @@
    <!-- <h2>商品</h2> -->
 
      <% @products.each do |p3| %>
+
+
     <div class="container">
 
  <!--  <div class="row"> -->
-
         <%= image_tag (p3.picture_url) %><br>
       <% if current_user == p3.user %>
         <%= link_to "編集" , edit_p3_path(p3.id), class: 'btn btn-default'%>

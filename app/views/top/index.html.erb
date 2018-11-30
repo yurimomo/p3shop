@@ -6,36 +6,33 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
 </head>
-
-<!-- <div class="box"> -->
-<div class="p3"><%= link_to "shareYummy" , p3s_path %></div>
-    <% if user_signed_in? %>
-   <div class="log_in">
-     <ul>
-       <li><%= link_to 'マイページ', edit_user_registration_path %></li>
-       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-      </ul>
-      </div>
-
-     <% else %>
-   <div class="log_out">
-      <ul>
-       <li><%= link_to 'ログイン', new_user_session_path  %></li>
-       <li><%= link_to 'サインアップ', new_user_registration_path %></li>
-     </ul>
-    </div>
-
-   <% end %>
-<section class="container-fluid">
 <header>
- 
-   <img src="<%= asset_path "ice_cream.jpg" %>">
-       <div class="inside">
-          <%= link_to p3s_path do %>
-            <h1>tell everybody what you recommended</h1>
-         <% end %>
-       </div>
+<!-- <div class="box"> -->
+<div class="p3">
+  <%= link_to "shareYummy" , p3s_path %>
+</div>
+<% if user_signed_in? %>
+  <div class="log_in">
+    <ul>
+    <li><%= link_to 'マイページ',edit_user_registration_path %></li>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    </ul>
+  </div>
+<% else %>
+  <div class="log_out">
+    <ul>
+    <li><%= link_to 'ログイン', new_user_session_path  %></li>
+    <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+     </ul>
+ </div>
+<% end %>
+<!-- <section class="container-fluid"> -->
 
-
+  <img src="<%= asset_path "ice_cream.jpg" %>">
+    <div class="inside">
+    <%= link_to p3s_path do %>
+    <h1>tell everybody what you recommended</h1>
+    <% end %>
+    </div>
 </header>
  
