@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,6 +46,7 @@ gem 'jquery-rails'
 
 gem 'nokogiri',  '1.8.1'
 gem 'pkg-config', "~> 1.1"
+gem 'sprockets', '3.7.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
