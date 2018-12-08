@@ -9,6 +9,6 @@ class NoticeMailer < ApplicationMailer
     @p3 = p3
 
     mail to: "yuri715lily_momo@yahoo.co.jp"
-    subject: 'post is done'
+    subject:'post is done'
   end
 end
