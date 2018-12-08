@@ -5,7 +5,8 @@ class NoticeMailer < ApplicationMailer
   #
   #   en.notice_mailer.sendmail_blog.subject
   #
-  def sendmail_blog(p3)
+  def sendmail_p3(p3)
+    # sendmail_blog(p3)にしてた
     @p3 = p3
 
     mail to: "yuri715lily_momo@yahoo.co.jp"
