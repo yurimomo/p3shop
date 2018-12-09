@@ -9,7 +9,7 @@ class NoticeMailer < ApplicationMailer
     # sendmail_blog(p3)にしてた
     @p3 = p3
 
-    mail to: "yuri715lily_momo@yahoo.co.jp"
-    subject:'post is done'
+    mail to: "yuri715lily_momo@yahoo.co.jp",
+    subject: 'post is done'
   end
 end
