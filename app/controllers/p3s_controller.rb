@@ -23,14 +23,10 @@ class P3sController < ApplicationController
     else
       render 'new'
     end
-    @p3.user_id = current_user.id
+    # @p3.user_id = current_user.id
     # user_idを代入する
-    if @p3.save
-     redirect_to p3s_path, notice: "投稿しました"
-   else
-    render 'new'
    end
-  end
+  
 
   def edit
   end
