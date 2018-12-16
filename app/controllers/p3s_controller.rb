@@ -17,14 +17,13 @@ class P3sController < ApplicationController
 
   def create
     @p3 = P3.create(p3s_params)
+    @p3.user_id = current_user.id #user_idを代入する
     if @p3.save
       redirect_to p3s_path, notice: "post is done"
       NoticeMailer.sendmail_p3(@p3).deliver
     else
       render 'new'
     end
-    # @p3.user_id = current_user.id
-    # user_idを代入する
    end
   
 
